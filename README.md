@@ -2,25 +2,31 @@
 
 # Project Name : webpack-template
 
-> In this exercise I will build a simple yet powerful webpack boilerplate, which I can later use as a starting point in my projects.
+> In this project, I will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server.
 
-<p align="center">
-  <img src="https://blog.mobnia.com/content/images/size/w2000/2020/06/webpack-1.png" alt="Full website" />
-</p>
+[![Capstone intro](https://img.youtube.com/vi/AcUd-_Yjjqg/0.jpg)](https://www.youtube.com/watch?v=AcUd-_Yjjqg)
 
 ## Built With
 
 - HTML
 - Basic CSS 
 - **JavaScript** and  **ES6 syntax**
+- **Webpack**
 - Linters (Lighthouse, Webhint, Stylelint, Eslint)
 - Git/GitHub work-flow
 
-## :red_circle: Live Demo (If available)
+## :red_circle: Live Demo
 
 [Live Demo Link](https://github.com/khitermedachraf/webpack-template/)
 
 ## Project requirements
+
+You will need to implement the following functionalities (presented in the video above):
+- Adding a new item.
+- Removing a selected item.
+- Marking a selected item as complete.
+- Removing all items marked as complete at once.
+- Reordering a selected item (as drag-and-drop) _[as an additional feature]_.
 
 ## Getting Started
 
