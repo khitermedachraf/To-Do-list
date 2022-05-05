@@ -1,7 +1,25 @@
 body {
-  background-color: bisque;
+  background-color: lightcyan;
 }
 
-.hello {
-  color: red;
+header h1 {
+  text-align: center;
+  margin: 0;
+}
+header {
+  height: 3em;
+}
+footer {
+  position: absolute;
+  bottom: 8px;
+  width: 99%;
+  height: 3em;
+}
+footer a {
+  text-decoration: none;
+  color: blue;
+}
+header,
+footer {
+  background-color: lightseagreen;
 }
