@@ -1,45 +1,14 @@
 /* eslint-disable no-plusplus */
 import './style.css';
-import { todoTasks, todoContainer, clearListBtn } from './modules/variables.js';
+import { todoTasks, todoContainer, clearAllCompletedBtn } from './modules/variables.js';
+import Actions from './modules/actions.js';
 
 todoTasks.push({
   index: 0,
   description: 'ddfgdfgdfgfg',
 });
-// Write a function to iterate over the tasks array and
-// populate an HTML list item element for each task.
-const displayTasks = (todoTasks) => {
-  for (let i = 0; i < todoTasks.length; i++) {
-    const task = document.createElement('li');
-    task.innerHTML = `
-    <div>
-      <input
-        type="checkbox"
-        id="task${todoTasks[i].index}"
-        name="task${todoTasks[i].index}"
-        value="task${todoTasks[i].index}"
-        class="checkbox"
-      />
-      <label for="task${todoTasks[i].index}">${todoTasks[i].description}</label>
-    </div>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 16 16"
-      class="three-dots"
-    >
-      <path
-        fill="grey"
-        d="M9.5 13a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0z"
-      />
-    </svg>
-    `;
-    todoContainer.insertBefore(task, clearListBtn);
-  }
-};
 
 // On page load render the dynamically created list of tasks in the dedicated placeholder.
 window.addEventListener('load', () => {
-  displayTasks(todoTasks);
+  Actions.displayTasks(todoTasks);
 });
