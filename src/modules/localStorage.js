@@ -1,5 +1,5 @@
 export default class LocalStorage {
-  static save = (data) => {
+  static set = (data) => {
     localStorage.setItem('TODO-LIST', JSON.stringify(data));
   };
 
