@@ -106,3 +106,7 @@ label {
   padding: 0 35%;
   background-color: aliceblue;
 }
+
+svg.three-dots:hover {
+  cursor: move;
+}

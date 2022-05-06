@@ -48,6 +48,7 @@ const displayTasks = (todoTasks) => {
       width="1.5em"
       height="1.5em"
       viewBox="0 0 16 16"
+      class="three-dots"
     >
       <path
         fill="grey"
