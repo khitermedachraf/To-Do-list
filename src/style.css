@@ -48,6 +48,7 @@ footer a {
 
 #todo-list {
   width: 40%;
+  min-width: 320px;
   margin: auto;
   border: 1px solid grey;
   border-radius: 8px;
