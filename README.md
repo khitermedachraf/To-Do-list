@@ -15,7 +15,7 @@
 - Linters (Lighthouse, Webhint, Stylelint, Eslint)
 - Git/GitHub work-flow
 
-## :red_circle: Live Demo
+## :red_circle: Live Demo (If availabale)
 
 [Live Demo Link](https://khitermedachraf.github.io/To-Do-list/dist/index.html)
 
