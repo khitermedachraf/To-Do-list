@@ -25,6 +25,7 @@ const todoTasks = [
 ];
 
 const todoList = document.getElementById('todo-list');
+const clearList = document.querySelector('.clear-list');
 
 // Write a function to iterate over the tasks array and
 // populate an HTML list item element for each task.
@@ -54,7 +55,7 @@ const displayTasks = (todoTasks) => {
       />
     </svg>
     `;
-    todoList.appendChild(task);
+    todoList.insertBefore(task, clearList);
   }
 };
 
