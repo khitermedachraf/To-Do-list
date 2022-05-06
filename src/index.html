@@ -7,7 +7,68 @@
   </head>
   <body>
     <header><h1>My To Do list:</h1></header>
-    <main></main>
+    <main class="container">
+      <div class="list-container">
+        <ul id="todo-list">
+          <li>
+            <p>Today's To DO</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              viewBox="0 0 1536 1536"
+            >
+              <path
+                fill="grey"
+                d="M1511 928q0 5-1 7q-64 268-268 434.5T764 1536q-146 0-282.5-55T238 1324l-129 129q-19 19-45 19t-45-19t-19-45V960q0-26 19-45t45-19h448q26 0 45 19t19 45t-19 45l-137 137q71 66 161 102t187 36q134 0 250-65t186-179q11-17 53-117q8-23 30-23h192q13 0 22.5 9.5t9.5 22.5zm25-800v448q0 26-19 45t-45 19h-448q-26 0-45-19t-19-45t19-45l138-138Q969 256 768 256q-134 0-250 65T332 500q-11 17-53 117q-8 23-30 23H50q-13 0-22.5-9.5T18 608v-7q65-268 270-434.5T768 0q146 0 284 55.5T1297 212l130-129q19-19 45-19t45 19t19 45z"
+              />
+            </svg>
+          </li>
+          <li>
+            <input
+              type="text"
+              placeholder="Add to your list..."
+              class="your-task"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="grey"
+                d="M4 6H2v12h2m7-12l-6 6l6 6l1.41-1.42L8.83 13H23v-2H8.83l3.58-3.59L11 6Z"
+              />
+            </svg>
+          </li>
+          <li>
+            <div>
+              <input
+                type="checkbox"
+                id="item1"
+                name="item1"
+                value="Bike"
+                class="checkbox"
+              />
+              <label for="item1"> I have a bike blabla ....</label>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill="grey"
+                d="M9.5 13a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0z"
+              />
+            </svg>
+          </li>
+          <li></li>
+        </ul>
+      </div>
+    </main>
     <footer>
       <p>
         &copy; 2020 Made by
