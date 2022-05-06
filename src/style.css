@@ -104,6 +104,14 @@ label {
   background-color: aliceblue;
 }
 
+svg {
+  cursor: pointer;
+}
+
 svg.three-dots:hover {
   cursor: move;
+}
+
+svg .trash:hover {
+  fill: red;
 }
