@@ -13,9 +13,7 @@ header {
 }
 
 footer {
-  position: absolute;
-  bottom: 8px;
-  width: 99%;
+  margin-top: 3em;
   height: 3em;
   padding-left: 1em;
 }
