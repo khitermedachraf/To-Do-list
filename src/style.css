@@ -103,6 +103,8 @@ label {
 .clear-list {
   padding: 0 35%;
   background-color: aliceblue;
+  font-weight: 500;
+  font-size: large;
 }
 
 svg,

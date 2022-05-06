@@ -45,7 +45,7 @@ todoContainer.addEventListener('click', (e) => {
       allLi[i].style.backgroundColor = 'lightcyan';
     }
     // set the background color of the focuced list item
-    e.target.parentElement.parentElement.style.backgroundColor = 'yellow';
+    e.target.parentElement.parentElement.style.backgroundColor = 'lightyellow';
     userTask.value = e.target.textContent;
     editId = e.target.parentElement.parentElement.id;
     isEditedTask = true;
