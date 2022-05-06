@@ -5,12 +5,14 @@ import {
 import Task from './task.js';
 import LocalStorage from './localStorage.js';
 
+let update = false;
+
 export default class Actions {
   /*  display todo tasks from the localstorage
   Write a function to iterate over the tasks array and
   populate an HTML list item element for each task. */
-
   static displayTasks = (todoTasks) => {
+    todoContainer.innerHTML = '';
     for (let i = 0; i < todoTasks.length; i++) {
       const task = document.createElement('li');
       task.innerHTML = `
@@ -37,7 +39,18 @@ export default class Actions {
         />
       </svg>
       `;
-      todoContainer.insertBefore(task, clearAllCompletedBtn);
+      todoContainer.appendChild(task);
     }
+  };
+
+  // add a task to the to-do tasks' array and to the localstorage
+  static addTask = (task) => {
+    if (!task) return null;
+    if (!update) {
+      todoTasks.push(task);
+    } else {
+      update = false;
+    }
+    return LocalStorage.set(todoTasks);
   };
 }
