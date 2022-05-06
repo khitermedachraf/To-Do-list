@@ -1,12 +1,9 @@
 /* eslint-disable no-plusplus */
 import {
-  todoTasks, userTask, clearAllCompletedBtn, todoContainer,
+  todoTasks, userTask, todoContainer,
 } from './variables.js';
-import Task from './task.js';
 import LocalStorage from './localStorage.js';
 import Helpers from './helpers.js';
-
-let update = false;
 
 export default class Actions {
   /*  display todo tasks from the localstorage
@@ -21,17 +18,15 @@ export default class Actions {
       <div>
         <input
           type="checkbox"
-          name="task${todoTasks[i].index}"
-          value="task${todoTasks[i].index}"
           class="checkbox"
         />
-        <label for="task${todoTasks[i].index}">${todoTasks[i].description}</label>
+        <label class="description">${todoTasks[i].description}</label>
       </div>
       <span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
+          width="1.5em"
+          height="1.5em"
           viewBox="0 0 16 16"
         >
           <path
@@ -61,11 +56,7 @@ export default class Actions {
   // add a task to the to-do tasks' array and to the localstorage
   static addTask = (task) => {
     if (!task) return null;
-    if (!update) {
-      todoTasks.push(task);
-    } else {
-      update = false;
-    }
+    todoTasks.push(task);
     return LocalStorage.set(todoTasks);
   };
 

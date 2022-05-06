@@ -1,11 +1,14 @@
 /* eslint-disable no-plusplus */
 import './style.css';
 import {
-  todoTasks, todoContainer, clearAllCompletedBtn, userTask,
+  todoTasks, todoContainer, userTask,
 } from './modules/variables.js';
 import Actions from './modules/actions.js';
 import Task from './modules/task.js';
+import LocalStorage from './modules/localStorage.js';
 
+let editId;
+let isEditedTask = false;
 // On page load render the dynamically created list of tasks in the dedicated placeholder.
 window.addEventListener('load', () => {
   Actions.displayTasks(todoTasks);
@@ -14,19 +17,41 @@ window.addEventListener('load', () => {
 // populate the localStorage and the To-do List when the user press Enter
 userTask.addEventListener('keyup', (event) => {
   if (event.keyCode === 13 && userTask.value) {
-    event.preventDefault();
-    const task = new Task(userTask);
-    Actions.addTask(task);
-    Actions.displayTasks(todoTasks);
-    userTask.value = '';
+    if (!isEditedTask) { // is isEditedTask is not true
+      event.preventDefault();
+      const task = new Task(userTask);
+      Actions.addTask(task);
+      Actions.displayTasks(todoTasks);
+      userTask.value = '';
+    } else { // is isEditedTask is true, so we are editing the task
+      todoTasks[editId - 1].description = userTask.value;
+      LocalStorage.set(todoTasks);
+      isEditedTask = false;
+      Actions.displayTasks(todoTasks);
+      userTask.value = '';
+    }
   }
 });
 
 todoContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('trash')) {
+    // Implement the functionality for deleting a task
     userTask.value = '';
     const currentId = e.target.parentElement.parentElement.parentElement.id;
     Actions.removeTask(currentId);
     Actions.displayTasks(todoTasks);
+  } else if (e.target.classList.contains('description')) {
+    // Implement the functionality for editing a task
+    userTask.focus();
+    // Iterate throw list items to setback the initial background color
+    const allLi = todoContainer.childNodes;
+    for (let i = 0; i < allLi.length; i++) {
+      allLi[i].style.backgroundColor = 'lightcyan';
+    }
+    // set the background color of the focuced list item
+    e.target.parentElement.parentElement.style.backgroundColor = 'yellow';
+    userTask.value = e.target.textContent;
+    editId = e.target.parentElement.parentElement.id;
+    isEditedTask = true;
   }
 });
