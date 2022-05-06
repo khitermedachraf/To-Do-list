@@ -1,29 +1,6 @@
 /* eslint-disable no-plusplus */
 import './style.css';
 
-const todoTasks = [
-  {
-    index: 0,
-    description: 'zerozerozerozero',
-    completed: false,
-  },
-  {
-    index: 1,
-    description: 'oneoneoneoneoneone',
-    completed: true,
-  },
-  {
-    index: 2,
-    description: 'twotwotwotwotwotwo',
-    completed: true,
-  },
-  {
-    index: 3,
-    description: 'threethreethreethree',
-    completed: false,
-  },
-];
-
 const todoList = document.getElementById('todo-list');
 const clearList = document.querySelector('.clear-list');
 
