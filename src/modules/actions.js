@@ -4,6 +4,7 @@ import {
 } from './variables.js';
 import Task from './task.js';
 import LocalStorage from './localStorage.js';
+import Helpers from './helpers.js';
 
 let update = false;
 
@@ -15,7 +16,7 @@ export default class Actions {
     todoContainer.innerHTML = '';
     for (let i = 0; i < todoTasks.length; i++) {
       const task = document.createElement('li');
-      task.setAttribute('id', `${todoTasks[i].index}}`);
+      task.setAttribute('id', `${todoTasks[i].index}`);
       task.innerHTML = `
       <div>
         <input
@@ -70,7 +71,8 @@ export default class Actions {
 
   // remove a task from the to-do tasks' array and to the localstorage
   static removeTask = (taskId) => {
-    todoTasks.splice(taskId, 1);
+    todoTasks.splice(taskId - 1, 1);
+    Helpers.updateIndex();
     LocalStorage.set(todoTasks);
   };
 }
