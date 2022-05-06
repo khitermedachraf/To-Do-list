@@ -71,6 +71,6 @@ export default class Actions {
   // remove a task from the to-do tasks' array and to the localstorage
   static removeTask = (taskId) => {
     todoTasks.splice(taskId, 1);
-    LocalStorage.save(todoTasks);
+    LocalStorage.set(todoTasks);
   };
 }
