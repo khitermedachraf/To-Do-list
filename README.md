@@ -17,7 +17,7 @@
 
 ## :red_circle: Live Demo
 
-[Live Demo Link](https://github.com/khitermedachraf/webpack-template/)
+[Live Demo Link](https://khitermedachraf.github.io/To-Do-list/dist/index.html)
 
 ## Project requirements
 
