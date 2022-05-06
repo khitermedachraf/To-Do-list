@@ -1,5 +1,6 @@
 import LocalStorage from './localStorage.js';
 
-export const todos = LocalStorage.get() || [];
-export const todoList = document.getElementById('todo-list');
-export const clearList = document.querySelector('.clear-list');
+export const todoTasks = LocalStorage.get() || [];
+export const todoContainer = document.getElementById('todo-list');
+export const clearListBtn = document.querySelector('.clear-list');
+export const userTask = document.querySelector('.add-input');
