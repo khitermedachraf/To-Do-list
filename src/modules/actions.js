@@ -53,17 +53,25 @@ export default class Actions {
     }
   };
 
-  // add a task to the to-do tasks' array and to the localstorage
+  // add a task to both the to-do tasks' array and the localstorage
   static addTask = (task) => {
     if (!task) return null;
     todoTasks.push(task);
     return LocalStorage.set(todoTasks);
   };
 
-  // remove a task from the to-do tasks' array and to the localstorage
+  // remove a task from both the to-do tasks' array and the localstorage
   static removeTask = (taskId) => {
     todoTasks.splice(taskId - 1, 1);
     Helpers.updateIndex();
     LocalStorage.set(todoTasks);
+  };
+
+  // edit a task in both the to-do tasks' array and  the localstorage
+  static editTask = (editId) => {
+    todoTasks[editId - 1].description = userTask.value;
+    LocalStorage.set(todoTasks);
+    Actions.displayTasks(todoTasks);
+    userTask.value = '';
   };
 }

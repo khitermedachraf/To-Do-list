@@ -5,7 +5,6 @@ import {
 } from './modules/variables.js';
 import Actions from './modules/actions.js';
 import Task from './modules/task.js';
-import LocalStorage from './modules/localStorage.js';
 
 let editId;
 let isEditedTask = false;
@@ -24,11 +23,8 @@ userTask.addEventListener('keyup', (event) => {
       Actions.displayTasks(todoTasks);
       userTask.value = '';
     } else { // is isEditedTask is true, so we are editing the task
-      todoTasks[editId - 1].description = userTask.value;
-      LocalStorage.set(todoTasks);
+      Actions.editTask(editId);
       isEditedTask = false;
-      Actions.displayTasks(todoTasks);
-      userTask.value = '';
     }
   }
 });
