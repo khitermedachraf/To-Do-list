@@ -5,6 +5,7 @@ import {
 } from './modules/variables.js';
 import Actions from './modules/actions.js';
 import Task from './modules/task.js';
+import TaskStatus from './modules/taskStatus.js';
 
 let editId;
 let isEditedTask = false;
@@ -29,6 +30,7 @@ userTask.addEventListener('keyup', (event) => {
   }
 });
 
+//  Create the logic of delete and edit tasks
 todoContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('trash')) {
     // Implement the functionality for deleting a task
@@ -51,3 +53,6 @@ todoContainer.addEventListener('click', (e) => {
     isEditedTask = true;
   }
 });
+
+// toggle the completed status of a todo' tasks
+TaskStatus.toggleCompleted();

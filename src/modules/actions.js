@@ -13,12 +13,13 @@ export default class Actions {
     todoContainer.innerHTML = '';
     for (let i = 0; i < todoTasks.length; i++) {
       const task = document.createElement('li');
-      task.setAttribute('id', `${todoTasks[i].index}`);
+      task.setAttribute('id', `${i}`);
       task.innerHTML = `
-      <div>
+      <div class="${todoTasks[i].completed ? 'completed' : ''} label-Container">
         <input
           type="checkbox"
           class="checkbox"
+          ${todoTasks[i].completed ? 'checked' : ''}
         />
         <label class="description">${todoTasks[i].description}</label>
       </div>
@@ -62,14 +63,14 @@ export default class Actions {
 
   // remove a task from both the to-do tasks' array and the localstorage
   static removeTask = (taskId) => {
-    todoTasks.splice(taskId - 1, 1);
+    todoTasks.splice(taskId, 1);
     Helpers.updateIndex();
     LocalStorage.set(todoTasks);
   };
 
   // edit a task in both the to-do tasks' array and  the localstorage
   static editTask = (editId) => {
-    todoTasks[editId - 1].description = userTask.value;
+    todoTasks[editId].description = userTask.value;
     LocalStorage.set(todoTasks);
     Actions.displayTasks(todoTasks);
     userTask.value = '';
