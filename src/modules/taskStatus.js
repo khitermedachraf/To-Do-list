@@ -1,5 +1,7 @@
-import { todoContainer, todoTasks } from './variables.js';
+/* eslint-disable no-plusplus */
+import { todoContainer, todoTasks, clearAllCompletedBtn } from './variables.js';
 import LocalStorage from './localStorage.js';
+import Actions from './actions.js';
 
 export default class TaskStatus {
   // toggle the completed status
@@ -11,6 +13,17 @@ export default class TaskStatus {
         LocalStorage.set(todoTasks);
         event.target.parentElement.classList.toggle('completed');
       }
+    });
+  };
+
+  // Implement a function for the "Clear all completed"
+  static deleteAllCompleted = () => {
+    clearAllCompletedBtn.addEventListener('click', () => {
+      const TasksToRemove = todoTasks.filter((todo) => todo.completed === true);
+      for (let i = 0; i < TasksToRemove.length; i++) {
+        Actions.removeTask(TasksToRemove[i].id - 1);
+      }
+      Actions.displayTasks(todoTasks);
     });
   };
 }

@@ -56,3 +56,6 @@ todoContainer.addEventListener('click', (e) => {
 
 // toggle the completed status of a todo' tasks
 TaskStatus.toggleCompleted();
+
+// delete all completed task
+TaskStatus.deleteAllCompleted();

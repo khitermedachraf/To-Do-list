@@ -113,6 +113,10 @@ label {
   font-size: large;
 }
 
+.clear-list a {
+  color: black;
+}
+
 svg,
 label {
   cursor: pointer;
