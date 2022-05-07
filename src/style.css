@@ -62,7 +62,8 @@ ul {
 ul li {
   list-style-type: none;
   width: 100%;
-  height: 3em;
+  height: max-content;
+  min-height: 3em;
   padding: 0 8px;
   border-bottom: 1px solid grey;
 
@@ -100,11 +101,20 @@ label {
   font-size: larger;
 }
 
+.label-Container {
+  word-wrap: break-word;
+  max-width: 80%;
+}
+
 .clear-list {
   padding: 0 35%;
   background-color: aliceblue;
   font-weight: 500;
   font-size: large;
+}
+
+.clear-list a {
+  color: black;
 }
 
 svg,
@@ -118,4 +128,10 @@ svg.three-dots:hover {
 
 svg .trash:hover {
   fill: red;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: green;
+  font-weight: 600;
 }
