@@ -1,66 +1,53 @@
 /* eslint-disable no-plusplus */
 import './style.css';
+import {
+  todoTasks, todoContainer, userTask,
+} from './modules/variables.js';
+import Actions from './modules/actions.js';
+import Task from './modules/task.js';
 
-const todoTasks = [
-  {
-    index: 0,
-    description: 'zerozerozerozero',
-    completed: false,
-  },
-  {
-    index: 1,
-    description: 'oneoneoneoneoneone',
-    completed: true,
-  },
-  {
-    index: 2,
-    description: 'twotwotwotwotwotwo',
-    completed: true,
-  },
-  {
-    index: 3,
-    description: 'threethreethreethree',
-    completed: false,
-  },
-];
-
-const todoList = document.getElementById('todo-list');
-const clearList = document.querySelector('.clear-list');
-
-// Write a function to iterate over the tasks array and
-// populate an HTML list item element for each task.
-const displayTasks = (todoTasks) => {
-  for (let i = 0; i < todoTasks.length; i++) {
-    const task = document.createElement('li');
-    task.innerHTML = `
-    <div>
-      <input
-        type="checkbox"
-        id="task${todoTasks[i].index}"
-        name="task${todoTasks[i].index}"
-        value="task${todoTasks[i].index}"
-        class="checkbox"
-      />
-      <label for="task${todoTasks[i].index}">${todoTasks[i].description}</label>
-    </div>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
-      viewBox="0 0 16 16"
-      class="three-dots"
-    >
-      <path
-        fill="grey"
-        d="M9.5 13a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0z"
-      />
-    </svg>
-    `;
-    todoList.insertBefore(task, clearList);
-  }
-};
-
+let editId;
+let isEditedTask = false;
 // On page load render the dynamically created list of tasks in the dedicated placeholder.
 window.addEventListener('load', () => {
-  displayTasks(todoTasks);
+  Actions.displayTasks(todoTasks);
+});
+
+// populate the localStorage and the To-do List when the user press Enter
+userTask.addEventListener('keyup', (event) => {
+  if (event.keyCode === 13 && userTask.value) {
+    if (!isEditedTask) { // is isEditedTask is not true
+      event.preventDefault();
+      const task = new Task(userTask);
+      Actions.addTask(task);
+      Actions.displayTasks(todoTasks);
+      userTask.value = '';
+    } else { // is isEditedTask is true, so we are editing the task
+      Actions.editTask(editId);
+      isEditedTask = false;
+    }
+  }
+});
+
+todoContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('trash')) {
+    // Implement the functionality for deleting a task
+    userTask.value = '';
+    const currentId = e.target.parentElement.parentElement.parentElement.id;
+    Actions.removeTask(currentId);
+    Actions.displayTasks(todoTasks);
+  } else if (e.target.classList.contains('description')) {
+    // Implement the functionality for editing a task
+    userTask.focus();
+    // Iterate throw list items to setback the initial background color
+    const allLi = todoContainer.childNodes;
+    for (let i = 0; i < allLi.length; i++) {
+      allLi[i].style.backgroundColor = 'lightcyan';
+    }
+    // set the background color of the focuced list item
+    e.target.parentElement.parentElement.style.backgroundColor = 'lightyellow';
+    userTask.value = e.target.textContent;
+    editId = e.target.parentElement.parentElement.id;
+    isEditedTask = true;
+  }
 });
