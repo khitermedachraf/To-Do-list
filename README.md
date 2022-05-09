@@ -1,6 +1,6 @@
   ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name : webpack-template
+# Project Name : To-Do-list
 
 > An app to manage tasks. A user can add, delete and edit a task and mark it as completed, It uses simple GUI and relies on DOM manipulation in pure JS and using local storage.
 
