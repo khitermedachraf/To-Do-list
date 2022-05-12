@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
 import {
   todoTasks, userTask, todoContainer,
@@ -72,10 +73,11 @@ export default class Actions {
   };
 
   // edit a task in both the to-do tasks' array and  the localstorage
-  static editTask = (editId) => {
+  static editTask = (editId, userTask) => {
     todoTasks[editId].description = userTask.value;
     LocalStorage.set(todoTasks);
-    Actions.displayTasks(todoTasks);
+    // Actions.displayTasks(todoTasks);
     userTask.value = '';
+    return todoTasks;
   };
 }

@@ -25,3 +25,18 @@ describe('test the edit description function', () => {
     expect(editTask[0].description).toEqual('task 1 edited');
   });
 });
+
+describe('test the update state function', () => {
+  test('should undate  the  state of the task from false tov true ', () => {
+    // Arrange
+    const taskIndex = 0;
+    // Act
+    // the addTask function returns the new array from localStorage which is empty initially
+    const updateState = TaskStatus.updateStatus(taskIndex);
+    // Assert
+    expect(updateState[0].completed).toBeTruthy();
+    TaskStatus.updateStatus(taskIndex);
+    expect(updateState[0].completed).toBeFalsy();
+    expect(typeof updateState[0]).toEqual('object');
+  });
+});
