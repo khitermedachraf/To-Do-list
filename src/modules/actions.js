@@ -14,6 +14,7 @@ export default class Actions {
     for (let i = 0; i < todoTasks.length; i++) {
       const task = document.createElement('li');
       task.setAttribute('id', `${i}`);
+      task.setAttribute('class', 'item');
       task.innerHTML = `
       <div class="${todoTasks[i].completed ? 'completed' : ''} label-Container">
         <input
@@ -58,7 +59,8 @@ export default class Actions {
   static addTask = (task) => {
     if (!task) return null;
     todoTasks.push(task);
-    return LocalStorage.set(todoTasks);
+    LocalStorage.set(todoTasks);
+    return todoTasks;
   };
 
   // remove a task from both the to-do tasks' array and the localstorage
