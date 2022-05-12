@@ -17,6 +17,7 @@ describe('test the Add item function', () => {
 
     // Act
     Actions.addTask(task);
+    // the addTask function returns the new array from localStorage which is empty initially
     const addTask = Actions.addTask(task);
     // Assert
     expect(addTask).toHaveLength(2);
