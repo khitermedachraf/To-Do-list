@@ -68,6 +68,7 @@ export default class Actions {
     todoTasks.splice(taskId, 1);
     Helpers.updateIndex();
     LocalStorage.set(todoTasks);
+    return todoTasks;
   };
 
   // edit a task in both the to-do tasks' array and  the localstorage
