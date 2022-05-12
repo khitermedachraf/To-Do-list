@@ -33,4 +33,10 @@ export default class TaskStatus {
       Actions.displayTasks(todoTasks);
     });
   };
+
+  // Clear All completed
+  static clearAllCompleted = () => {
+    const incompletedTasks = todoTasks.filter((todo) => todo.completed === false);
+    return incompletedTasks;
+  };
 }
