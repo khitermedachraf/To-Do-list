@@ -16,6 +16,13 @@ export default class TaskStatus {
     });
   };
 
+  // Update status
+  static updateStatus = (id) => {
+    todoTasks[id].completed = !todoTasks[id].completed;
+    LocalStorage.set(todoTasks);
+    return todoTasks;
+  };
+
   // Implement a function for the "Clear all completed"
   static deleteAllCompleted = () => {
     clearAllCompletedBtn.addEventListener('click', () => {
@@ -25,5 +32,11 @@ export default class TaskStatus {
       }
       Actions.displayTasks(todoTasks);
     });
+  };
+
+  // Clear All completed
+  static clearAllCompleted = () => {
+    const incompletedTasks = todoTasks.filter((todo) => todo.completed === false);
+    return incompletedTasks;
   };
 }
