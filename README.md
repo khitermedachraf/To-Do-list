@@ -21,7 +21,7 @@
 
 [Live Demo Link](https://khitermedachraf.github.io/To-Do-list/dist/index.html)
 
-## Project requirements
+## Project requirements 
 
 You will need to implement the following functionalities (presented in the video above):
 - Adding a new item.
@@ -35,13 +35,13 @@ You will need to implement the following functionalities (presented in the video
 To get a local copy up and running follow these simple example steps.
 - Open terminal
 - Clone this project by the command: 
-
-$ git clone git@github.com:khitermedachraf/Awesome-books-ES6.git
-
+```
+git clone git@github.com:khitermedachraf/Awesome-books-ES6.git
+```
 - Then go to the main folder using the next command:
-
-$ cd Awesome-books-ES6.git
-
+```
+cd Awesome-books-ES6.git
+```
 - Finally, run diplay the index.html file in your local browser, or also, you can use Live Server in Visual Studio Code.
 
 To get a local copy up and running follow these simple example steps.
@@ -51,25 +51,30 @@ To get a local copy up and running follow these simple example steps.
 - IDE to edit and run the code (We use Visual Studio Code 🔥).
 - Git to versionning your work.
 
-### Install
+### Install 
+```
+npm install --save-dev hint@6.x
+```
+```
+npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+```
+```
+npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+```
 
-- npm install --save-dev hint@6.x
-- npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-- npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
-
-### Usage
+### Usage ⚒
 
 - For anyone who wants to Use **webpack to bundle JavaScript.**
 - For anyone who wants to practice html5, css3 and or vanilla JavaScript
 - For anyone who wants to create his own Web devlopment course site.
 
-### Run tests
+### Run tests 🧪
 
-- run: npx hint .
-- run: npx stylelint "**/*.{css,scss}"
-- run: npx eslint .
+- run: ```npx hint .```
+- run: ```npx stylelint "**/*.{css,scss}"```
+- run: ```npx eslint .```
 
-## Authors
+## Authors 👥
 
 👤 **Achraf KHITER**
 
@@ -87,11 +92,11 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+## Show your support ✨
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## Acknowledgments 🎓💪
 
 - Hat tip to anyone whose code was used
 - Inspiration
@@ -99,6 +104,6 @@ Give a ⭐️ if you like this project!
 - My standup team
 - Coding partners
 
-## 📝 License
+## 📝 License ☑
 
 This project is [MIT](./MIT.md) licensed.
